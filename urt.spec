@@ -75,9 +75,19 @@ Statyczna biblioteka Utah Raster Toolkit.
 %patch3 -p1
 
 %build
+mv config/urt config/urt.old
+sed -e's,^##defpath MAN_DEST.*,#defpath MAN_DEST %{_mandir},' \
+	-e's,^##defpath LIB_DEST.*,#defpath LIB_DEST %{_libdir},' \
+	-e's,^##defpath GET_DEST.*,#defpath GET_DEST %{_bindir},' \
+	-e's,^##defpath CNV_DEST.*,#defpath CNV_DEST %{_bindir},' \
+	-e's,^##defpath TOOLS_DEST.*,#defpath TOOLS_DEST %{_bindir},' \
+	-e's,^##defpath INC_DEST.*,#defpath INC_DEST %{_includedir}/rle,' \
+	config/urt.old > config/urt
+
 ./Configure
 %{__make} \
 	ExtraCFLAGS="%{rpmcflags}" \
+	LIBX11="-L/usr/X11R6/%{_lib} -lX11" \
 	LIBPBMPLUS="-lnetpbm"
 
 %install
