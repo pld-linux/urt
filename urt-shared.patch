@@ -30,7 +30,7 @@ diff -Nur urt-3.1b.orig/lib/makefile.src urt-3.1b/lib/makefile.src
  objs: $(OBJS)
  
 +%.lo: %.c
-+	libtool --mode=compile $(CC) $(CFLAGS) -c $<
++	libtool --mode=compile --tag=C $(CC) $(CFLAGS) -c $<
 +
  # Copy the library to the destination directory.
  # (Install a second copy on the debug subdirectory, on the theory that it
