@@ -2,7 +2,7 @@ Summary:	Utah Raster Toolkit
 Summary(pl):	Zestaw narzêdzi z Utah do grafiki rastrowej
 Name:		urt
 Version:	3.1b
-Release:	2
+Release:	3
 License:	GPL-like/"reserved" (see documentation for details)
 Group:		Applications/Graphics
 Source0:	ftp://ftp.cs.utah.edu/pub/dept/OLD/pub/%{name}-%{version}.tar.Z
@@ -14,7 +14,7 @@ Patch3:		%{name}-shared.patch
 BuildRequires:	XFree86-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	libtool >= 2:1.4d
-BuildRequires:	netpbm-devel
+BuildRequires:	netpbm-devel >= 10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -76,7 +76,9 @@ Statyczna biblioteka Utah Raster Toolkit.
 
 %build
 ./Configure
-%{__make} ExtraCFLAGS="%{rpmcflags}"
+%{__make} \
+	ExtraCFLAGS="%{rpmcflags}" \
+	LIBPBMPLUS="-lnetpbm"
 
 %install
 rm -rf $RPM_BUILD_ROOT
