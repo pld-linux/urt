@@ -2,7 +2,7 @@ Summary:	Utah Raster Toolkit
 Summary(pl):	Zestaw narzêdzi z Utah do grafiki rastrowej
 Name:		urt
 Version:	3.1b
-Release:	1
+Release:	2
 License:	GPL-like/"reserved" (see documentation for details)
 Group:		Applications/Graphics
 Source0:	ftp://ftp.cs.utah.edu/pub/dept/OLD/pub/%{name}-%{version}.tar.Z
@@ -56,6 +56,8 @@ Summary:	Utah Raster Toolkit static library
 Summary(pl):	Statyczna biblioteka Utah Raster Toolkit
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}
+Obsoletes:	netpbm-rle-static
+Provides:	netpbm-rle-static
 
 %description static
 Utah Raster Toolkit static library.
