@@ -84,7 +84,6 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_includedir}/rle} \
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf 3.1-changes CHANGES README blurb copyright
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -94,7 +93,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc 3.1-changes CHANGES README blurb copyright
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %{_mandir}/man1/*
