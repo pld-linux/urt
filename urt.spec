@@ -5,9 +5,6 @@ Version:	3.1b
 Release:	1
 License:	GPL-like/"reserved" (see documentation for details)
 Group:		Applications/Graphics
-Group(de):	Applikationen/Grafik
-Group(pl):	Aplikacje/Grafika
-Group(pt):	AplicaГУes/GrАficos
 Source0:	ftp://ftp.cs.utah.edu/pub/dept/OLD/pub/%{name}-%{version}.tar.Z
 Patch0:		%{name}-config.patch
 Patch1:		%{name}-fixes.patch
@@ -46,13 +43,6 @@ dostarcza:
 Summary:	Development files for Utah Raster Toolkit
 Summary(pl):	Pakiet dla programistСw Utah Raster Toolkit
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 
 %description devel
@@ -65,13 +55,6 @@ Pliki nagЁСwkowe Utah Raster Toolkit.
 Summary:	Utah Raster Toolkit static library
 Summary(pl):	Statyczna biblioteka Utah Raster Toolkit
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name}-devel = %{version}
 
 %description static
