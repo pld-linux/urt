@@ -53,6 +53,7 @@ Group(pl):	Programowanie/Biblioteki
 Group(pt_BR):	Desenvolvimento/Bibliotecas
 Group(ru):	Разработка/Библиотеки
 Group(uk):	Розробка/Б╕бл╕отеки
+Requires:	%{name} = %{version}
 
 %description devel
 Utah Raster Toolkit header files.
@@ -71,6 +72,7 @@ Group(pl):	Programowanie/Biblioteki
 Group(pt_BR):	Desenvolvimento/Bibliotecas
 Group(ru):	Разработка/Библиотеки
 Group(uk):	Розробка/Б╕бл╕отеки
+Requires:	%{name}-devel = %{version}
 
 %description static
 Utah Raster Toolkit static library.
