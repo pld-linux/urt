@@ -15,6 +15,7 @@ BuildRequires:	XFree86-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	libtool >= 2:1.4d
 BuildRequires:	netpbm-devel >= 10
+BuildRequires:	%{__perl}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -97,6 +98,8 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_includedir}/rle} \
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+%{__perl} -pi -e "s,\\'/usr/lib\\',\\'%{_libdir}\\'," $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
