@@ -1,0 +1,23 @@
+--- urt-3.1b.orig/makedef.awk	Thu Feb 27 22:04:13 1992
++++ urt-3.1b/makedef.awk	Fri Oct 12 22:57:48 2001
+@@ -125,7 +125,7 @@
+ /^#defpath/	{
+ 		    if ( processing == 0 || including == 1 ) {
+ 			syms[$2] = 1;
+-			if ( substr($3,0,1) == "/" ) {
++			if ( substr($3,1,1) == "/" ) {
+ 			    vars[$2] = $3; 
+ 			} else {
+ 			    vars[$2] = depth $3; 
+@@ -204,7 +204,10 @@
+ 		}
+ 
+ emitting == 1 && $1 == emit {
+-		    printf( "%s = %s\n", $1, vars[$1] );
++		    if( $1 == "DEST" )
++			printf( "%s = $(DESTDIR)%s\n", $1, vars[$1] );
++		    else
++			printf( "%s = %s\n", $1, vars[$1] );
+ 		    emitting = 0;
+ 		    next;
+ 		}

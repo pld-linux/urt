@@ -1,0 +1,118 @@
+diff -Nur urt-3.1b.orig/lib/makefile.src urt-3.1b/lib/makefile.src
+--- urt-3.1b.orig/lib/makefile.src	Wed Mar  4 20:32:53 1992
++++ urt-3.1b/lib/makefile.src	Fri Oct 12 23:36:07 2001
+@@ -16,47 +16,32 @@
+ #emit OPT_OBJS
+ OPT_OBJS = 
+ 
+-OBJS = Runput.o buildmap.o cmd_name.o colorquant.o dither.o \
+-	float_to_exp.o hilbert.o inv_cmap.o \
+-	rle_addhist.o rle_cp.o rle_error.o rle_getcom.o \
+-	rle_getraw.o rle_getrow.o rle_getskip.o rle_global.o \
+-	rle_hdr.o \
+-	rle_open_f.o rle_putcom.o rle_putraw.o rle_putrow.o \
+-	rle_raw_alc.o rle_rawrow.o rle_row_alc.o scanargs.o \
+-	vaxshort.o \
++OBJS = Runput.lo buildmap.lo cmd_name.lo colorquant.lo dither.lo \
++	float_to_exp.lo hilbert.lo inv_cmap.lo \
++	rle_addhist.lo rle_cp.lo rle_error.lo rle_getcom.lo \
++	rle_getraw.lo rle_getrow.lo rle_getskip.lo rle_global.lo \
++	rle_hdr.lo \
++	rle_open_f.lo rle_putcom.lo rle_putraw.lo rle_putrow.lo \
++	rle_raw_alc.lo rle_rawrow.lo rle_row_alc.lo scanargs.lo \
++	vaxshort.lo \
+ 	$(OPT_OBJS)
+ 
+-LIBNAME = librle.a
++LIBNAME = librle.la
+ 
+ # Just rebuild the object files.
+ objs: $(OBJS)
+ 
++%.lo: %.c
++	libtool --mode=compile $(CC) $(CFLAGS) -c $<
++
+ # Copy the library to the destination directory.
+ # (Install a second copy on the debug subdirectory, on the theory that it
+ #  is more useful to have a non-debug version than nothing at all.)
+ # Do nothing if $(DEST) is empty (or not defined)
+ install: buildlib
+ 	@sh -c "if test '$(DEST)x' != x ; then \
+-		echo cp $(LIBNAME) $(DEST)/$(LIBNAME) ; \
+-		cp $(LIBNAME) $(DEST)/$(LIBNAME) ; \
+-		if test x$(RANLIB) != x ; then \
+-			echo ranlib $(DEST)/$(LIBNAME) ; \
+-			ranlib $(DEST)/$(LIBNAME) ; \
+-		else \
+-			true ; \
+-		fi ; \
+-		if test -d $(DEST)/debug ; then \
+-			echo cp $(LIBNAME) $(DEST)/debug/$(LIBNAME) ; \
+-			if test x$(RANLIB) != x ; then \
+-				cp $(LIBNAME) $(DEST)/debug/$(LIBNAME) ; \
+-				echo ranlib $(DEST)/debug/$(LIBNAME) ; \
+-			else \
+-				true ; \
+-			fi ; \
+-			ranlib $(DEST)/debug/$(LIBNAME) ; \
+-		else \
+-			true ; \
+-		fi ; \
++		echo install $(LIBNAME) $(DEST)/$(LIBNAME) ; \
++		libtool --mode=install install $(LIBNAME) $(DEST) ; \
+ 	else \
+ 		true ; \
+ 	fi"
+@@ -65,11 +50,8 @@
+ # Rebuild the library from all the .o files.
+ buildlib: $(OBJS)
+ 	-rm -f $(LIBNAME)
+-	ar rc $(LIBNAME)
+-	ar q $(LIBNAME) $(OBJS)
+-#ifndef NO_RANLIB
+-	ranlib $(LIBNAME)
+-#endif
++	libtool --mode=link $(CC) $(LDFLAGS) -o $(LIBNAME) $(OBJS) -rpath /usr/lib -lm
++	ln -sf .libs/*.so .
+ 	touch buildlib
+ 
+ # Clean up installed stuff and binaries
+@@ -129,22 +110,22 @@
+ # Dependencies on .h files:
+ # DO NOT DELETE THIS LINE
+ 
+-Runput.o: ${RI}/rle.h ${RI}/rle_code.h ${RI}/rle_put.h
+-buildmap.o: ${RI}/rle.h
+-float_to_exp.o: ${RI}/rle.h
+-rle_addhist.o: ${RI}/rle.h
+-rle_cp.o: ${RI}/rle.h ${RI}/rle_code.h ${RI}/rle_put.h
+-rle_getcom.o: ${RI}/rle.h
+-rle_getraw.o: ${RI}/rle.h ${RI}/rle_raw.h
+-rle_getrow.o: ${RI}/rle.h ${RI}/rle_code.h
+-rle_getskip.o: ${RI}/rle.h ${RI}/rle_code.h
+-rle_global.o: ${RI}/rle.h ${RI}/rle_put.h
+-rle_putcom.o: ${RI}/rle.h
+-rle_putraw.o: ${RI}/rle.h ${RI}/rle_put.h ${RI}/rle_raw.h
+-rle_putrow.o: ${RI}/rle.h ${RI}/rle_put.h
+-rle_raw_alc.o: ${RI}/rle.h ${RI}/rle_raw.h
+-rle_rawrow.o: ${RI}/rle.h ${RI}/rle_raw.h
+-rle_row_alc.o: ${RI}/rle.h
++Runput.lo: ${RI}/rle.h ${RI}/rle_code.h ${RI}/rle_put.h
++buildmap.lo: ${RI}/rle.h
++float_to_exp.lo: ${RI}/rle.h
++rle_addhist.lo: ${RI}/rle.h
++rle_cp.lo: ${RI}/rle.h ${RI}/rle_code.h ${RI}/rle_put.h
++rle_getcom.lo: ${RI}/rle.h
++rle_getraw.lo: ${RI}/rle.h ${RI}/rle_raw.h
++rle_getrow.lo: ${RI}/rle.h ${RI}/rle_code.h
++rle_getskip.lo: ${RI}/rle.h ${RI}/rle_code.h
++rle_global.lo: ${RI}/rle.h ${RI}/rle_put.h
++rle_putcom.lo: ${RI}/rle.h
++rle_putraw.lo: ${RI}/rle.h ${RI}/rle_put.h ${RI}/rle_raw.h
++rle_putrow.lo: ${RI}/rle.h ${RI}/rle_put.h
++rle_raw_alc.lo: ${RI}/rle.h ${RI}/rle_raw.h
++rle_rawrow.lo: ${RI}/rle.h ${RI}/rle_raw.h
++rle_row_alc.lo: ${RI}/rle.h
+ 
+ config-subdirs:
+ 
