@@ -11,10 +11,10 @@ Patch0:		%{name}-config.patch
 Patch1:		%{name}-fixes.patch
 Patch2:		%{name}-DESTDIR.patch
 Patch3:		%{name}-shared.patch
-BuildRequires:	libtool
-BuildRequires:	netpbm-devel
-BuildRequires:	libtiff-devel
 BuildRequires:	XFree86-devel
+BuildRequires:	libtiff-devel
+BuildRequires:	libtool >= 2:1.4d
+BuildRequires:	netpbm-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -83,8 +83,8 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_includedir}/rle} \
 	$RPM_BUILD_ROOT%{_mandir}/man{1,3,5}
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
-
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -101,9 +101,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/rle
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
+%{_includedir}/rle
 %{_mandir}/man[35]/*
 
 %files static
