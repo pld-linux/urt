@@ -6,6 +6,7 @@ Release:	2
 License:	GPL-like/"reserved" (see documentation for details)
 Group:		Applications/Graphics
 Source0:	ftp://ftp.cs.utah.edu/pub/dept/OLD/pub/%{name}-%{version}.tar.Z
+# Source0-md5:	c9a377284d00c102c1a8af53d95a6b39
 Patch0:		%{name}-config.patch
 Patch1:		%{name}-fixes.patch
 Patch2:		%{name}-DESTDIR.patch
