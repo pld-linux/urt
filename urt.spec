@@ -58,6 +58,7 @@ Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}
 Obsoletes:	netpbm-rle-static
 Provides:	netpbm-rle-static
+Conflicts:	netpbm-static < 9.23-2
 
 %description static
 Utah Raster Toolkit static library.
