@@ -2,7 +2,7 @@ Summary:	Utah Raster Toolkit
 Summary(pl):	Zestaw narzêdzi z Utah do grafiki rastrowej
 Name:		urt
 Version:	3.1b
-Release:	4
+Release:	5
 License:	GPL-like/"reserved" (see documentation for details)
 Group:		Applications/Graphics
 Source0:	ftp://ftp.cs.utah.edu/pub/dept/OLD/pub/%{name}-%{version}.tar.Z
@@ -87,6 +87,7 @@ sed -e's,^##defpath MAN_DEST.*,#defpath MAN_DEST %{_mandir},' \
 
 ./Configure
 %{__make} \
+	CC="%{__cc}" \
 	ExtraCFLAGS="%{rpmcflags}" \
 	LIBX11="-L/usr/X11R6/%{_lib} -lX11" \
 	LIBPBMPLUS="-lnetpbm"
@@ -98,8 +99,6 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_includedir}/rle} \
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-%{__perl} -pi -e "s,\\'/usr/lib\\',\\'%{_libdir}\\'," $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
