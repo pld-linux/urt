@@ -22,24 +22,24 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 The Utah Raster toolkit is a collection of programs and C routines for
 dealing with raster images commonly encountered in computer graphics.
 It provides the following major functions:
- - A device and system independent image format for storing images and
-   information about them. Called the RLE format, it uses run length
-   encoding to reduce storage space for most images.
- - A library of C routines for reading, writing and manipulating images
-   stored in the RLE format.
- - A collections of programs for manipulating and displaying RLE
-   images.
+- A device and system independent image format for storing images and
+  information about them. Called the RLE format, it uses run length
+  encoding to reduce storage space for most images.
+- A library of C routines for reading, writing and manipulating images
+  stored in the RLE format.
+- A collections of programs for manipulating and displaying RLE
+  images.
 
 %description -l pl
 Utah Raster Toolkit to zestaw programów i funkcji w C do obróbki
 obrazów rastrowych czêsto wystêpuj±cych w grafice komputerowej. URT
 dostarcza:
- - Niezale¿ny od urz±dzenia i systemu format obrazków do zapisu grafiki
-   i informacji o niej. Nazywa siê RLE i u¿ywa kompresji Run-Length
-   Encoding, aby zmniejszyæ zajmowane miejsce.
- - Zestaw funkcji w C do czytania, pisania i manipulowania obrazkami
-   zapisanymi w formacie RLE.
- - Zestaw programów do manipulowania i wy¶wietlania obrazków RLE.
+- Niezale¿ny od urz±dzenia i systemu format obrazków do zapisu grafiki
+  i informacji o niej. Nazywa siê RLE i u¿ywa kompresji Run-Length
+  Encoding, aby zmniejszyæ zajmowane miejsce.
+- Zestaw funkcji w C do czytania, pisania i manipulowania obrazkami
+  zapisanymi w formacie RLE.
+- Zestaw programów do manipulowania i wy¶wietlania obrazków RLE.
 
 %package devel
 Summary:	Development files for Utah Raster Toolkit
