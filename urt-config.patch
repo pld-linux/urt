@@ -90,25 +90,6 @@ diff -Nur urt-3.1b.orig/config/urt urt-3.1b/config/urt
  
  # DEST is where all programs will be put.  Can be overridden for specific
  # directories below.
-@@ -121,12 +121,12 @@
- # library, include files, or manual pages, respectively, to be
- # installed anywhere.
- 
--##defpath MAN_DEST /usr/site/man
--##defpath LIB_DEST
--##defpath GET_DEST
--##defpath CNV_DEST
--##defpath TOOLS_DEST
--##defpath INC_DEST
-+#defpath MAN_DEST	/usr/share/man
-+#defpath LIB_DEST	/usr/lib
-+#defpath GET_DEST	/usr/bin
-+#defpath CNV_DEST	/usr/bin
-+#defpath TOOLS_DEST	/usr/bin
-+#defpath INC_DEST	/usr/include/rle
- 
- # Control of formatting.  If your "roff" program needs to be piped to
- # something to print, set ROFFPIPE to (e.g.) "| lpr"
 @@ -191,11 +191,10 @@
  #ifdef PBMPLUS
  # PBMDIR should refer to the root of your PBM source tree.
