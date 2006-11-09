@@ -11,11 +11,11 @@ Patch0:		%{name}-config.patch
 Patch1:		%{name}-fixes.patch
 Patch2:		%{name}-DESTDIR.patch
 Patch3:		%{name}-shared.patch
+BuildRequires:	%{__perl}
 BuildRequires:	XFree86-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	libtool >= 2:1.4d
 BuildRequires:	netpbm-devel >= 10
-BuildRequires:	%{__perl}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -45,7 +45,7 @@ dostarcza:
 Summary:	Development files for Utah Raster Toolkit
 Summary(pl):	Pakiet dla programistów Utah Raster Toolkit
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Utah Raster Toolkit header files.
@@ -57,9 +57,9 @@ Pliki nag³ówkowe Utah Raster Toolkit.
 Summary:	Utah Raster Toolkit static library
 Summary(pl):	Statyczna biblioteka Utah Raster Toolkit
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
-Obsoletes:	netpbm-rle-static
+Requires:	%{name}-devel = %{version}-%{release}
 Provides:	netpbm-rle-static
+Obsoletes:	netpbm-rle-static
 Conflicts:	netpbm-static < 9.23-2
 
 %description static
