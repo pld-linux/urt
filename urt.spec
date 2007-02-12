@@ -1,5 +1,5 @@
 Summary:	Utah Raster Toolkit
-Summary(pl.UTF-8):   Zestaw narzędzi z Utah do grafiki rastrowej
+Summary(pl.UTF-8):	Zestaw narzędzi z Utah do grafiki rastrowej
 Name:		urt
 Version:	3.1b
 Release:	5
@@ -43,7 +43,7 @@ dostarcza:
 
 %package devel
 Summary:	Development files for Utah Raster Toolkit
-Summary(pl.UTF-8):   Pakiet dla programistów Utah Raster Toolkit
+Summary(pl.UTF-8):	Pakiet dla programistów Utah Raster Toolkit
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -55,7 +55,7 @@ Pliki nagłówkowe Utah Raster Toolkit.
 
 %package static
 Summary:	Utah Raster Toolkit static library
-Summary(pl.UTF-8):   Statyczna biblioteka Utah Raster Toolkit
+Summary(pl.UTF-8):	Statyczna biblioteka Utah Raster Toolkit
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Provides:	netpbm-rle-static
