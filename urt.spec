@@ -1,5 +1,5 @@
 Summary:	Utah Raster Toolkit
-Summary(pl):	Zestaw narzêdzi z Utah do grafiki rastrowej
+Summary(pl.UTF-8):   Zestaw narzÄ™dzi z Utah do grafiki rastrowej
 Name:		urt
 Version:	3.1b
 Release:	5
@@ -30,32 +30,32 @@ It provides the following major functions:
 - A collections of programs for manipulating and displaying RLE
   images.
 
-%description -l pl
-Utah Raster Toolkit to zestaw programów i funkcji w C do obróbki
-obrazów rastrowych czêsto wystêpuj±cych w grafice komputerowej. URT
+%description -l pl.UTF-8
+Utah Raster Toolkit to zestaw programÃ³w i funkcji w C do obrÃ³bki
+obrazÃ³w rastrowych czÄ™sto wystÄ™pujÄ…cych w grafice komputerowej. URT
 dostarcza:
-- Niezale¿ny od urz±dzenia i systemu format obrazków do zapisu grafiki
-  i informacji o niej. Nazywa siê RLE i u¿ywa kompresji Run-Length
-  Encoding, aby zmniejszyæ zajmowane miejsce.
+- NiezaleÅ¼ny od urzÄ…dzenia i systemu format obrazkÃ³w do zapisu grafiki
+  i informacji o niej. Nazywa siÄ™ RLE i uÅ¼ywa kompresji Run-Length
+  Encoding, aby zmniejszyÄ‡ zajmowane miejsce.
 - Zestaw funkcji w C do czytania, pisania i manipulowania obrazkami
   zapisanymi w formacie RLE.
-- Zestaw programów do manipulowania i wy¶wietlania obrazków RLE.
+- Zestaw programÃ³w do manipulowania i wyÅ›wietlania obrazkÃ³w RLE.
 
 %package devel
 Summary:	Development files for Utah Raster Toolkit
-Summary(pl):	Pakiet dla programistów Utah Raster Toolkit
+Summary(pl.UTF-8):   Pakiet dla programistÃ³w Utah Raster Toolkit
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Utah Raster Toolkit header files.
 
-%description devel -l pl
-Pliki nag³ówkowe Utah Raster Toolkit.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe Utah Raster Toolkit.
 
 %package static
 Summary:	Utah Raster Toolkit static library
-Summary(pl):	Statyczna biblioteka Utah Raster Toolkit
+Summary(pl.UTF-8):   Statyczna biblioteka Utah Raster Toolkit
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Provides:	netpbm-rle-static
@@ -65,7 +65,7 @@ Conflicts:	netpbm-static < 9.23-2
 %description static
 Utah Raster Toolkit static library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka Utah Raster Toolkit.
 
 %prep
