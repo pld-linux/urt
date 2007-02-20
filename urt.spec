@@ -12,7 +12,8 @@ Patch1:		%{name}-fixes.patch
 Patch2:		%{name}-DESTDIR.patch
 Patch3:		%{name}-shared.patch
 BuildRequires:	%{__perl}
-BuildRequires:	XFree86-devel
+BuildRequires:	xorg-lib-libX11-devel
+BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	libtool >= 2:1.4d
 BuildRequires:	netpbm-devel >= 10
