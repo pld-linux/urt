@@ -72,7 +72,7 @@ diff -Nur urt-3.1b.orig/lib/makefile.src urt-3.1b/lib/makefile.src
 -#ifndef NO_RANLIB
 -	ranlib $(LIBNAME)
 -#endif
-+	libtool --mode=link --tag=CC $(CC) $(LDFLAGS) -o $(LIBNAME) $(OBJS) -rpath $(DEST) -lm
++	libtool --mode=link --tag=CC $(CC) $(CFLAGS) $(LDFLAGS) -o $(LIBNAME) $(OBJS) -rpath $(DEST) -lm
 +	ln -sf .libs/*.so .
  	touch buildlib
  
