@@ -116,15 +116,6 @@ diff -Nur urt-3.1b.orig/config/urt urt-3.1b/config/urt
  #endif
  
  #ifdef X10
-@@ -227,6 +226,6 @@
- #endif
- 
- #ifdef X11
--LIBX11 = -lX11
--INCX11 = 
-+LIBX11 = -L/usr/X11R6/lib -lX11
-+INCX11 = -I/usr/X11R6/include
- #endif
 diff -Nur urt-3.1b.orig/makefile.hdr urt-3.1b/makefile.hdr
 --- urt-3.1b.orig/makefile.hdr	Fri Mar  6 15:04:57 1992
 +++ urt-3.1b/makefile.hdr	Fri Oct 12 22:10:22 2001
