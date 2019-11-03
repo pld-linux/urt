@@ -2,7 +2,7 @@ Summary:	Utah Raster Toolkit
 Summary(pl.UTF-8):	Zestaw narzędzi z Utah do grafiki rastrowej
 Name:		urt
 Version:	3.1b
-Release:	9
+Release:	10
 License:	GPL-like/"reserved" (see documentation for details)
 Group:		Applications/Graphics
 Source0:	ftp://ftp.iastate.edu/pub/utah-raster/%{name}-%{version}.tar.Z

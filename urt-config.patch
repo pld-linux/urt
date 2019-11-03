@@ -100,7 +100,7 @@ diff -Nur urt-3.1b.orig/config/urt urt-3.1b/config/urt
 -INCPBMPLUS = -I$(PBMDIR) -I$(PBMDIR)/ppm -I$(PBMDIR)/pgm -I$(PBMDIR)/pbm
 -LIBPBMPLUS = $(PBMDIR)/ppm/libppm.a $(PBMDIR)/pgm/libpgm.a \
 -		$(PBMDIR)/pbm/libpbm.a 
-+INCPBMPLUS = -I$(PBMDIR)/include
++INCPBMPLUS = -I$(PBMDIR)/include/netpbm
 +LIBPBMPLUS = -lppm -lpgm -lpbm
  #endif
  
