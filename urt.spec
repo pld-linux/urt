@@ -5,13 +5,14 @@ Version:	3.1b
 Release:	10
 License:	GPL-like/"reserved" (see documentation for details)
 Group:		Applications/Graphics
+# dead server, now available at https://github.com/sarnold/urt
 Source0:	ftp://ftp.iastate.edu/pub/utah-raster/%{name}-%{version}.tar.Z
 # Source0-md5:	c9a377284d00c102c1a8af53d95a6b39
 Patch0:		%{name}-config.patch
 Patch1:		%{name}-fixes.patch
 Patch2:		%{name}-DESTDIR.patch
 Patch3:		%{name}-shared.patch
-URL:		http://www.cs.utah.edu/gdc/projects/urt/
+URL:		https://www2.cs.utah.edu/gdc/projects/urt/
 BuildRequires:	%{__perl}
 BuildRequires:	libtiff-devel
 BuildRequires:	libtool >= 2:1.4d
@@ -91,7 +92,7 @@ Statyczna biblioteka Utah Raster Toolkit.
 %patch -P3 -p1
 
 %build
-mv config/urt config/urt.old
+%{__mv} config/urt config/urt.old
 sed -e's,^##defpath MAN_DEST.*,#defpath MAN_DEST %{_mandir},' \
 	-e's,^##defpath LIB_DEST.*,#defpath LIB_DEST %{_libdir},' \
 	-e's,^##defpath GET_DEST.*,#defpath GET_DEST %{_bindir},' \
