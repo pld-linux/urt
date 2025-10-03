@@ -2,7 +2,7 @@ Summary:	Utah Raster Toolkit
 Summary(pl.UTF-8):	Zestaw narzędzi z Utah do grafiki rastrowej
 Name:		urt
 Version:	3.1b
-Release:	10
+Release:	11
 License:	GPL-like/"reserved" (see documentation for details)
 Group:		Applications/Graphics
 # dead server, now available at https://github.com/sarnold/urt
@@ -12,6 +12,7 @@ Patch0:		%{name}-config.patch
 Patch1:		%{name}-fixes.patch
 Patch2:		%{name}-DESTDIR.patch
 Patch3:		%{name}-shared.patch
+Patch4:		%{name}-c.patch
 URL:		https://www2.cs.utah.edu/gdc/projects/urt/
 BuildRequires:	%{__perl}
 BuildRequires:	libtiff-devel
@@ -90,6 +91,7 @@ Statyczna biblioteka Utah Raster Toolkit.
 %patch -P1 -p1
 %patch -P2 -p1
 %patch -P3 -p1
+%patch -P4 -p1
 
 %build
 %{__mv} config/urt config/urt.old
@@ -288,11 +290,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc 3.1-changes CHANGES README blurb copyright
 %attr(755,root,root) %{_libdir}/librle.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/librle.so.0
+%ghost %{_libdir}/librle.so.0
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/librle.so
+%{_libdir}/librle.so
 %{_libdir}/librle.la
 %{_includedir}/rle
 %{_mandir}/man3/buildmap.3*
