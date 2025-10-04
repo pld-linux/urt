@@ -1,0 +1,23 @@
+--- urt-3.1b/tools/rlenoise.c.orig	2025-10-04 09:54:14.424558691 +0200
++++ urt-3.1b/tools/rlenoise.c	2025-10-04 09:57:27.732349020 +0200
+@@ -48,16 +48,16 @@ char ** argv;
+ #ifdef USE_RANDOM
+     /* Use the BSD random() function */
+     {
+-	long seed;
++	time_t seed;
+ 	(void)time( &seed );
+-	srandom( *(int *)&seed );
++	srandom( (int)seed );
+     }
+ #else
+     /* use the standard Unix rand function if nothing better */
+     {
+-	long seed;
++	time_t seed;
+ 	(void)time( &seed );
+-	srand( *(int *)&seed );
++	srand( (int)seed );
+     }
+ #define random rand
+ #endif

@@ -13,6 +13,7 @@ Patch1:		%{name}-fixes.patch
 Patch2:		%{name}-DESTDIR.patch
 Patch3:		%{name}-shared.patch
 Patch4:		%{name}-c.patch
+Patch5:		%{name}-types.patch
 URL:		https://www2.cs.utah.edu/gdc/projects/urt/
 BuildRequires:	%{__perl}
 BuildRequires:	libtiff-devel
@@ -92,6 +93,7 @@ Statyczna biblioteka Utah Raster Toolkit.
 %patch -P2 -p1
 %patch -P3 -p1
 %patch -P4 -p1
+%patch -P5 -p1
 
 %build
 %{__mv} config/urt config/urt.old
